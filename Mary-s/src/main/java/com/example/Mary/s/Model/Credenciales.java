@@ -8,10 +8,20 @@ package com.example.Mary.s.Model;
 /*importamos las librerias de jakarta
     que permite hacer el sql programando en java */
 
-import jakarta.persistence.*;
-/*importamos las llibreiras para poder hacer el delete cascade de lallave foranea */
 import org.hibernate.annotations.OnDelete;
 import org.hibernate.annotations.OnDeleteAction;
+
+import jakarta.persistence.CascadeType;
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.OneToOne;
+import jakarta.persistence.Table;
 
 /*indicamos que es una entidad de sql */
 @Entity
@@ -35,7 +45,7 @@ public class Credenciales {
     /* roldel usuario */
     /* mapeamos el archivo que tiene el rol para el atributo enum */
     @Enumerated(EnumType.STRING)
-    @Column(nullable = false)
+    @Column(nullable = true)
     /* establecemos que el valor por defecto va a ser cliente */
     private RolUsuario rol_usuario = RolUsuario.cliente;
 

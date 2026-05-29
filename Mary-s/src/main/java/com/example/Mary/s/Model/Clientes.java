@@ -8,7 +8,12 @@ package com.example.Mary.s.Model;
 /*importamos las livreiras necesarias de jakarta
   que permite hacer el sql programando en java */
 
-import jakarta.persistence.*;
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 
 /*el @entity señala que esto es una entidad sql no una clase */
 @Entity
@@ -50,7 +55,7 @@ public class Clientes {
      * le diga sql
      * que use ese tipo de dato
      */
-    /* colocamos el java.time.LocalDateTime para q guarde la hora y el dia */
+    /* colocamos el java.time.LocalDateTime (Timestamp:para q guarde la hora y el dia) */
     @Column(nullable = false, updatable = false, columnDefinition = "TIMESTAMP DEFAULT CURRENT_TIMESTAMP")
     private java.time.LocalDateTime fecha_registro_cliente;
 
