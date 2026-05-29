@@ -1,0 +1,313 @@
+/*========== PAGINA 3 RESERVAS ================*/
+/* SECCIÓN CONTACTO */
+.info-contacto {
+    background: linear-gradient(135deg, #ffffff, #f8f9ff);
+    padding: 30px;
+    border-radius: 20px;
+    margin-bottom: 30px;
+
+    box-shadow: 0 12px 28px rgba(0,0,0,0.08);
+    border-left: 6px solid #a61c1c;
+
+    transition: all 0.4s ease;
+}
+
+.info-contacto h2 {
+    color: #1e2a78;
+    margin-bottom: 18px;
+    font-size: 34px;
+}
+
+.info-contacto p {
+    margin: 12px 0;
+    font-size: 22px;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* LINKS */
+.info-contacto a {
+    color: #d62828;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.info-contacto a:hover {
+    text-decoration: underline;
+    color: #1e2a78;
+}
+
+/* REFERENCIA */
+.referencia {
+    font-size: 18px;
+    color: #555;
+    margin-top: 8px;
+}
+
+/* HORARIOS */
+.horarios {
+    background: linear-gradient(135deg, #1e2a78, #3a4cc0);
+    color: white;
+    padding: 30px;
+    border-radius: 20px;
+    margin-bottom: 30px;
+
+    box-shadow: 0 12px 28px rgba(0,0,0,0.15);
+    transition: all 0.4s ease;
+}
+
+.horarios h2 {
+    margin-bottom: 18px;
+    font-size: 34px;
+    color: white;
+}
+
+.horarios p {
+    color: white;
+    font-size: 22px;
+    line-height: 1.6;
+}
+
+/* REDES */
+.redes {
+    text-align: center;
+    background: linear-gradient(135deg, #ffffff, #f4f6ff);
+    padding: 30px;
+    border-radius: 20px;
+
+    box-shadow: 0 12px 28px rgba(0,0,0,0.08);
+    transition: all 0.4s ease;
+}
+
+.redes h2 {
+    color: #1e2a78;
+    margin-bottom: 20px;
+    font-size: 34px;
+}
+
+/* BOTÓN FACEBOOK */
+.redes .btn {
+    background: linear-gradient(45deg, #1877f2, #3b5998);
+    padding: 14px 28px;
+    font-size: 20px;
+    border-radius: 30px;
+}
+
+/* HOVER */
+.redes .btn:hover {
+    transform: scale(1.08);
+}
+
+.redes img:hover {
+    transform: scale(1.2);
+}
+
+/* EFECTO GENERAL */
+.info-contacto:hover,
+.horarios:hover,
+.redes:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 18px 35px rgba(0,0,0,0.12);
+}
+
+/* MAPA (NO TOCADO FUNCIONALIDAD) */
+.mapa {
+    margin-top: 20px;
+    border-radius: 18px;
+    overflow: hidden;
+    box-shadow: 0 12px 30px rgba(0,0,0,0.18);
+}
+
+/* CLAVE NO TOCAR */
+.oculto {
+    display: none;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+
+    .info-contacto,
+    .horarios,
+    .redes {
+        padding: 22px;
+        border-radius: 18px;
+    }
+
+    .info-contacto h2,
+    .horarios h2,
+    .redes h2 {
+        font-size: 28px;
+    }
+
+    .info-contacto p,
+    .horarios p {
+        font-size: 18px;
+    }
+
+    .referencia {
+        font-size: 16px;
+    }
+
+    .redes .btn {
+        width: 100%;
+        display: block;
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 480px) {
+
+    .info-contacto h2,
+    .horarios h2,
+    .redes h2 {
+        font-size: 24px;
+    }
+
+    .info-contacto p,
+    .horarios p {
+        font-size: 16px;
+    }
+
+    .referencia {
+        font-size: 14px;
+    }
+}
+/* ===================================== */
+         /* MEJORAS RESERVAS */
+/* ===================================== */
+
+/* ESPACIO GENERAL PARA QUE NO PEGUE AL BORDE */
+.info-contacto,
+.horarios,
+.redes{
+    margin-left: 25px;
+    margin-right: 25px;
+    padding: 38px;
+    position: relative;
+    z-index: 1;
+}
+
+/* CUADRO CONTACTO MÁS ELEGANTE */
+.info-contacto{
+    background: linear-gradient(135deg,#eef3ff,#dbe7ff,#f8fbff);
+    border-left: 8px solid #c62828;
+    border-radius: 24px;
+    box-shadow:
+    0 20px 40px rgba(30,42,120,0.14),
+    0 8px 18px rgba(0,0,0,0.08);
+}
+
+/* CUADRO HORARIOS */
+.horarios{
+    background: linear-gradient(135deg,#1e2a78,#3a4cc0,#5367e0);
+    border-left: 8px solid #ffd166;
+    border-radius: 24px;
+    box-shadow:
+    0 20px 40px rgba(30,42,120,0.22),
+    0 8px 18px rgba(0,0,0,0.10);
+}
+
+/* CUADRO REDES */
+.redes{
+    background: linear-gradient(135deg,#ffffff,#eef3ff,#dce8ff);
+    border-left: 8px solid #1e2a78;
+    border-radius: 24px;
+    box-shadow:
+    0 20px 40px rgba(58,76,192,0.14),
+    0 8px 18px rgba(0,0,0,0.08);
+}
+
+/* TITULOS MÁS GRANDES */
+.info-contacto h2,
+.horarios h2,
+.redes h2{
+    font-size: 40px;
+    margin-bottom: 22px;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+/* LETRAS MÁS GRANDES */
+.info-contacto p,
+.horarios p,
+.redes p,
+.referencia{
+    font-size: 25px;
+    line-height: 1.8;
+    margin-bottom: 14px;
+}
+
+/* EFECTO QUE SALGA HACIA ENFRENTE */
+.info-contacto:hover,
+.horarios:hover,
+.redes:hover{
+    transform: translateY(-10px) scale(1.02);
+    box-shadow:
+    0 28px 55px rgba(0,0,0,0.18);
+}
+
+/* LINKS MÁS BONITOS */
+.info-contacto a,
+.redes a{
+    font-size: 24px;
+    font-weight: 700;
+}
+
+/* RESPONSIVE */
+@media (max-width:768px){
+
+.info-contacto,
+.horarios,
+.redes{
+    margin-left: 10px;
+    margin-right: 10px;
+    padding: 24px;
+}
+
+.info-contacto h2,
+.horarios h2,
+.redes h2{
+    font-size: 30px;
+}
+
+.info-contacto p,
+.horarios p,
+.redes p,
+.referencia{
+    font-size: 18px;
+}
+}
+/* FOOTER RESERVAS */
+
+.footer-reservas{
+    background: linear-gradient(135deg,#1e2a78,#3a4cc0);
+    padding: 35px 20px;
+    text-align: center;
+    margin-top: 60px;
+    border-top: 5px solid #c62828;
+}
+
+.logo-footer-reserva{
+    width: 130px;
+    display: block;
+    margin: auto;
+    margin-bottom: 20px;
+}
+
+.iconos-footer{
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+}
+
+.iconos-footer img{
+    width: 55px;
+    height: 55px;
+    object-fit: contain;
+    transition: 0.3s;
+}
+
+.iconos-footer img:hover{
+    transform: scale(1.15) translateY(-6px);
+}
