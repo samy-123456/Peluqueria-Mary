@@ -54,10 +54,6 @@ public class Citas {
      @ManyToOne(cascade = CascadeType.REMOVE)
      @JoinColumn(name = "id_servicio", unique = true, nullable = false)
      private Servicios id_servicio;
-     /*llave foranea con el administrador */
-     @ManyToOne(cascade = CascadeType.REMOVE)
-     @JoinColumn(name = "id_administrador", unique = true, nullable = false)
-     private Administradores id_administrador;
 
      /*constructor vacio */
      public Citas(){
@@ -66,14 +62,13 @@ public class Citas {
 
      /*constructor con parametros */
      public Citas(LocalDate fecha_cita, LocalTime hora_cita, EstadoCita estado_cita,
-     Clientes id_cliente, Empleados id_empleado, Servicios id_servicio, Administradores id_administrador){
+     Clientes id_cliente, Empleados id_empleado, Servicios id_servicio){
          this.fecha_cita = fecha_cita;
          this.hora_cita = hora_cita;
          this.estado_cita = estado_cita;
          this.id_cliente = id_cliente;
          this.id_empleado = id_empleado;
          this.id_servicio = id_servicio;
-         this.id_administrador = id_administrador;
      }
 
      /*METODOS GET Y SET */
@@ -146,14 +141,5 @@ public class Citas {
      public void set_id_servicio(Servicios id_servicio) {
          this.id_servicio = id_servicio;
      }
-
-     /* get del id_administrador */
-     public Administradores get_id_administrador() {
-         return id_administrador;
-     }
-
-     /* set del id_administrador */
-     public void set_id_administrador(Administradores id_administrador) {
-         this.id_administrador = id_administrador;
-     }
 }
+

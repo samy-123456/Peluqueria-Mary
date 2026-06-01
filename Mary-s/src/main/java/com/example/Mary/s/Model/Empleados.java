@@ -43,6 +43,9 @@ public class Empleados {
     /*salario del empleado */
     @Column(nullable = false)
     private Double salario_empleado;
+    /*fto del empleado */
+    @Column(nullable = false)
+    private String imagen_empleado;
 
     /*creamos el constructor vacio */
     public Empleados(){
@@ -52,13 +55,14 @@ public class Empleados {
 
     /*constructor con parametrso */
     public Empleados(String nombre_empleado, String apellido_empleado, String telefono_empleado,
-    String correo_empleado, String cargo_empleado, Double salario_empleado){
+    String correo_empleado, String cargo_empleado, Double salario_empleado, String imagen_empleado){
         this.nombre_empleado=nombre_empleado;
         this.apellido_empleado = apellido_empleado;
         this.telefono_empleado=telefono_empleado;
         this.correo_empleado = correo_empleado;
         this.cargo_empleado = cargo_empleado;
         this.salario_empleado = salario_empleado;
+        this.imagen_empleado = imagen_empleado;
     }
 
     /*METODOS GET Y SET */
@@ -130,6 +134,16 @@ public class Empleados {
     /* set del salario_empleado */
     public void set_salario_empleado(Double salario_empleado) {
         this.salario_empleado = salario_empleado;
+    }
+
+    /* get del imagen_empleado */
+    public String get_imagen_empleado() {
+        return imagen_empleado;
+    }
+
+    /* set del imagen_empleado */
+    public void set_imagen_empleado(String imagen_empleado) {
+        this.imagen_empleado = imagen_empleado;
     }
     
 }

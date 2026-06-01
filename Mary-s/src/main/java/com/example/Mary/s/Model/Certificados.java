@@ -42,6 +42,9 @@ private java.time.LocalDateTime fecha_emicion_certificado;
 /*fecha de vencimiento del certificado */
 @Column(nullable = false)
 private LocalDate fecha_vencimiento_certificado;
+/*imagen del certificado */
+@Column(nullable = false)
+private String imagen_certificado;
 /*llave foranea con los empleados */
 @ManyToOne(cascade = CascadeType.REMOVE)
 @JoinColumn(name = "id_empleado", unique = true, nullable = false)
@@ -54,12 +57,13 @@ public Certificados(){
 
 /*constructor con parametros */
 public Certificados(String nombre_certificado, String institucion_certificado,
-java.time.LocalDateTime fecha_emicion_certificado, LocalDate fecha_vencimiento_certificado, Empleados id_empleado){
+java.time.LocalDateTime fecha_emicion_certificado, LocalDate fecha_vencimiento_certificado, String imagen_certificado, Empleados id_empleado) {
     this.nombre_certificado = nombre_certificado;
     this.institucion_certificado = institucion_certificado;
     this.fecha_emicion_certificado = fecha_emicion_certificado;
     this.fecha_vencimiento_certificado = fecha_vencimiento_certificado;
     this.id_empleado = id_empleado;
+    this.imagen_certificado = imagen_certificado;
 }
 
 /*METODOS GET Y SET */
@@ -111,6 +115,16 @@ public LocalDate getFecha_vencimiento_certificado() {
 /*set del fecha de vencimiento del certificado */
 public void setFecha_vencimiento_certificado(LocalDate fecha_vencimiento_certificado) {
     this.fecha_vencimiento_certificado = fecha_vencimiento_certificado;
+}
+
+/*get del imagen del certificado */
+public String getImagen_certificado() {
+    return imagen_certificado;
+}
+
+/*set del imagen del certificado */
+public void setImagen_certificado(String imagen_certificado) {
+    this.imagen_certificado = imagen_certificado;
 }
 
 /*get del id_empleado */

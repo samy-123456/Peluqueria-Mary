@@ -6,7 +6,12 @@ Proyect Mary's BarberShop*/
 package com.example.Mary.s.Model;
 
 /*importamos la libreria de jakarta para usar sql en programacion de java */
-import jakarta.persistence.*;
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 
 /*@Entity indica q es una entidad sql */
 @Entity
@@ -28,6 +33,9 @@ public class CategoriaServicios {
     /* nombre de la categoria */
     @Column(nullable = false)
     private String nombre_categoria;
+    /*imagen para mostrar en la vista de la categoria */
+    @Column(nullable = false)
+    private String imagen_categoria;
 
     /* creamos el constructor vacio */
     public CategoriaServicios() {
@@ -35,8 +43,9 @@ public class CategoriaServicios {
     }
 
     /* creamos ahora un constructor con parametros */
-    public CategoriaServicios(String nombre_categoria) {
+    public CategoriaServicios(String nombre_categoria, String imagen_categoria) {
         this.nombre_categoria = nombre_categoria;
+        this.imagen_categoria = imagen_categoria;
     }
 
     /* CREAMOS LOS METODOS GET Y SET DE LOS PARAMETROS */
@@ -55,5 +64,13 @@ public class CategoriaServicios {
 
     public void set_nombre_categoria(String nombre_categoria) {
         this.nombre_categoria = nombre_categoria;
+    }
+
+    public String get_imagen_categoria(){
+        return imagen_categoria;
+    }
+
+    public void set_imagen_categoria(String imagen_categoria){
+        this.imagen_categoria = imagen_categoria;
     }
 }

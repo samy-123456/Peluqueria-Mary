@@ -41,6 +41,9 @@ public class Servicios{
     /*tiempo del servicio */
     @Column(nullable = false)
     private Integer duracion_minutos;
+    /*imagen de los seervicios */
+    @Column(nullable = false)
+    private String imagen_servicio;
     /*llave forane acon la categoria */
     @ManyToOne(cascade = CascadeType.REMOVE)
     @JoinColumn(name="id_categoria", unique = true, nullable = false)
@@ -53,11 +56,12 @@ public class Servicios{
 
     /*constructor con parametros */
     public Servicios(String nombre_servicio, String  descripcion_servicio, Double precio_servicio,
-    Integer duracion_minutos, CategoriaServicios id_categoria){
+    Integer duracion_minutos,String imagen_servicio, CategoriaServicios id_categoria){
         this.nombre_servicio = nombre_servicio;
         this.descripcion_servicio = descripcion_servicio;
         this.precio_servicio = precio_servicio;
         this.duracion_minutos = duracion_minutos;
+        this.imagen_servicio = imagen_servicio;
         this.id_categoria = id_categoria;
     }
 
@@ -110,6 +114,16 @@ public class Servicios{
     /* set del duracion_minutos */
     public void set_duracion_minutos(Integer duracion_minutos) {
         this.duracion_minutos = duracion_minutos;
+    }
+
+    /* get del imagen_servicio */
+    public String get_imagen_servicio() {
+        return imagen_servicio;
+    }
+
+    /* set del imagen_servicio */
+    public void set_imagen_servicio(String imagen_servicio) {
+        this.imagen_servicio = imagen_servicio;
     }
 
     /* get del id_categoria */
