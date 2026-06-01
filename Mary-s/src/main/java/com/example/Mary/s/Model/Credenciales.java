@@ -126,5 +126,6 @@ public class Credenciales {
     public void set_cliente(Clientes cliente) {
         this.cliente = cliente;
     }
+    @
 
 }

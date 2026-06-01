@@ -27,9 +27,14 @@ public class Servicios {
     private String descripcion_servicio;
     private String tiempo_servicio;
     private String imagenUrl_servicio;
+    
 
     @Column(nullable = false)
     private double precio_servicio;
+
+     @ManyToOne(cascade=CascadeType.REMOVE)
+     @JoinColumn(name="id_categoria",unique=true,nullable=false)
+     private CategoriaServicios idcatservi;
 
     /*constructor vacio */
     public Servicios(){
@@ -37,12 +42,13 @@ public class Servicios {
     }
 
     /*constructor con parametros */
-    public Servicios(String nombre_servicio, String descripcion_servicio, String tiempo_servicio, String imagenUrl_servicio, double precio_servicio) {
+    public Servicios(String nombre_servicio, String descripcion_servicio, String tiempo_servicio, String imagenUrl_servicio, double precio_servicio ,CategoriaServicios idcatservi) {
         this.nombre_servicio = nombre_servicio;
         this.descripcion_servicio = descripcion_servicio;
         this.tiempo_servicio = tiempo_servicio;
         this.imagenUrl_servicio = imagenUrl_servicio;
         this.precio_servicio = precio_servicio;
+        this.idcatservi=idcatservi;
     }
 
     /*metodos get y set*/
@@ -93,5 +99,12 @@ public class Servicios {
 
     public void setPrecio_servicio(double precio_servicio) {
         this.precio_servicio = precio_servicio;
+    }
+    public CategoriaServicios getidcatservi(){
+        return idcatservi;
+    }
+    public void setidcatservi(CategoriaServicios idcatservi){
+        this.idcatservi=idcatservi;
+
     }
 }
