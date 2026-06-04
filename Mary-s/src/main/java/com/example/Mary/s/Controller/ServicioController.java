@@ -30,7 +30,7 @@ public class ServicioController {
     @GetMapping("/servicios")
     public String listarProductos(@RequestParam(name = "categoria", required = false) String categoria, Model model) {
         if (categoria != null && !categoria.isEmpty()) {
-            model.addAttribute("servicios", servicioRepository.findByCategoria(categoria));
+            model.addAttribute("servicios", servicioRepository.findByCategoriaignoreCase(categoria));
         } else {
             model.addAttribute("servicio", servicioRepository.findAll());
         }

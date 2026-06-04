@@ -25,6 +25,9 @@ public class CategoriaServicioController {
     private CategoriaServicioRepository categoriaServicioRepository;
 
     /* mapeamos la ruta principal de la pagina */
+    /* solicita cada uno de los parametro o llama a los parametros:requestparam */
+    /*ingnoreCase:se encuantala palabra sea q se escriba con mayuscuklas o miniusculas  */
+    /*toUpperCase: transforma minusculas en mayusculas */
     @GetMapping("/categorias")
     /* establecemos el metodo para listar y filtrar las categorias */
     public String categorias(@RequestParam(name = "nombre_categoria", required = false) String nombre_categoria,

@@ -8,6 +8,7 @@ package com.example.Mary.s.Model;
 import java.time.LocalDate;
 import java.time.LocalTime;
 
+
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -141,5 +142,6 @@ public class Citas {
      public void set_id_servicio(Servicios id_servicio) {
          this.id_servicio = id_servicio;
      }
+
 }
 

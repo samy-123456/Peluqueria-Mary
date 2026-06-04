@@ -35,7 +35,14 @@ public class Servicios{
     /*descripcion del servicio */
     @Column(nullable = false, columnDefinition="TEXT")
     private String descripcion_servicio;
+
     /*precio del servicio */
+
+    private String tiempo_servicio;
+    private String imagenUrl_servicio;
+    
+
+
     @Column(nullable = false)
     private Double precio_servicio;
     /*tiempo del servicio */
@@ -49,17 +56,22 @@ public class Servicios{
     @JoinColumn(name="id_categoria", unique = true, nullable = false)
     private CategoriaServicios id_categoria;
 
-    /*creamos el contrictor vacio */
+    /*constructor vacio */
+
     public Servicios(){
 
     }
 
     /*constructor con parametros */
+
     public Servicios(String nombre_servicio, String  descripcion_servicio, Double precio_servicio,
     Integer duracion_minutos,String imagen_servicio, CategoriaServicios id_categoria){
+
+
         this.nombre_servicio = nombre_servicio;
         this.descripcion_servicio = descripcion_servicio;
         this.precio_servicio = precio_servicio;
+
         this.duracion_minutos = duracion_minutos;
         this.imagen_servicio = imagen_servicio;
         this.id_categoria = id_categoria;
@@ -136,3 +148,4 @@ public class Servicios{
         this.id_categoria = id_categoria;
     }
 }
+

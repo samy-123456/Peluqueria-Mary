@@ -17,6 +17,6 @@ public enum RolUsuario {
 
     cliente,
     admin,
-    vendedor
+    empleado
 
 }

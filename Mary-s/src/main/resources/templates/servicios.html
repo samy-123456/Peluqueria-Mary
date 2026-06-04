@@ -1,192 +1,133 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <!-- configuracion para la pagina sea responsive y se adapte
-      a cuaquier pantalla de aparato electronico-->
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;700&display=swap" rel="stylesheet">
-    <title>Servicios</title>
-    <!-- une con la pagina de estilos mediante su enlace -->
-    <link rel="stylesheet" href="estilos.css" />
-    <link rel="stylesheet" href="servicios.css" />
-  </head>
+<DOCTYPE html>
+  <html>
+    <html lang="en">
+      <!-- coneccion entre html y java-->
+      <html xmlns="http://www.thymeleaf.org">
+        <head>
+          <meta charset="utf-8" />
+          <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0"
+          />
+          <title>Inicio</title>
+          <!-- links de boostrap entre otros estilos y funciones-->
+          <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+          />
+          <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+          />
+          <link
+            href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600;700&display=swap"
+            rel="stylesheet"
+          />
+          <link
+            href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;700&display=swap"
+            rel="stylesheet"
+          />
+          <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+          />
+          <!-- estilos de la pagina web los colocamos todos solo aqui-->
+          <style>
+             </style>
+        </head>
+        <body>
+          <!-- header de la pagina web-->
+          <header class="header">
+            <div class="contenedor-header">
+              <!--logo de  la barberia-->
+              <div class="logo-contenedor">
+                <img src="logsinfo.png" alt="logo" class="logo-img" />/.logo-img
+              </div>
+              /.logo-contenedor
 
-  <body>
-    <!--  HEADER -->
-    <header class="header">
-      <div class="contenedor-header">
-        <h1 class="titulo">Nuestros Servicios</h1>
+              <!--titulo de la pagina-->
+              <div class="titulo-contenedor">
+                <h1 class="titulo-frase">Mary's Barbery</h1>
+                <p class="frase">Realza tu belleza</p>
+              </div>
+              /.titulo-contenedor
 
-        <nav class="nav">
+              <!-- Menú desplegable -->
+              <nav class="nav">
+                <!-- botón-->
+                <button class="menu-btn" onclick="toggleMenu()">☰</button>
 
-  <!-- BOTÓN -->
-  <button class="menu-btn" onclick="toggleMenu()">☰</button>
+                <!-- menu lateral -->
+                <div id="menu-lateral" class="menu-lateral">
+                  <a href="index.html"
+                    ><i class="fa-solid fa-house"></i>Inicio</a
+                  >
+                  <a href="categoria.html"
+                    ><i class="fa-solid fa-tag"></i>Categorias</a
+                  >
+                  <a href="nosotros.html"
+                    ><i class="fa-solid fa-user-group"></i>Nuestro Equipo</a
+                  >
+                  <a href="agendar_cita.html"
+                    ><i class="fa-solid fa-calendar"></i>Agendar mi cita</a
+                  >
+                  <a href="certificados.html"
+                    ><i class="fa-solid fa-certificate"></i>Certificaciones</a
+                  >
+                  <a href="contactanos"
+                    ><i class="fa-solid fa-phone"></i>Contactanos</a
+                  >
+                </div>
+                /#menu-lateral.menu-lateral
 
-  <!-- MENÚ LATERAL -->
-  <div id="menu-lateral" class="menu-lateral">
-    <a href="index.html"><i class="fa-solid fa-house"></i> Inicio</a>
-    <a href="servicios.html"><i class="fa-solid fa-scissors"></i> Servicios</a>
-    <a href="reservas.html"><i class="fa-solid fa-phone"></i> Contacto</a>
-  </div>
-
-  <!-- OVERLAY -->
-  <div id="overlay" class="overlay" onclick="cerrarMenu()"></div>
-
-</nav>
-      </div>
-    </header>
-
-    <!--  MAIN -->
-    <main class="main">
-      <!--  SERVICIOS -->
-      <section class="servicios">
-        <div class="botoncontacto">
-          <a href="./reservas.html" class="btn">Contactos</a>
-        </div>
-        <h2>Lo que ofrecemos</h2>
-
-        <div class="lista-servicios">
-          <div class="servicio">
-            <img
-              src="corteh.avif"
-              alt="Corte de cabello"
-              class="img-servicio"
-            />
-            <br />
-            <img src="cortem.png" alt="Corte de cabello" class="img-servicio" />
-            <h3>Cortes de cabello</h3>
-            <p>Estilos modernos para hombre y mujer.</p>
-          </div>
-
-          <div class="servicio">
-            <img src="tinte.jfif" alt="Tintes" class="img-servicio" />
-            <h3>Tintes / Coloración</h3>
-            <p>Cambia tu look con colores vibrantes y profesionales.</p>
-          </div>
-
-          <div class="servicio">
-            <img src="manicura.jpg" alt="Manicure" class="img-servicio" />
-            <h3>Manicure</h3>
-            <p>Cuidado completo para tus manos.</p>
-          </div>
-
-          <div class="servicio">
-            <img src="peinados.jpg" alt="Peinados" class="img-servicio" />
-            <h3>Peinados especiales</h3>
-            <p>Perfectos para fiestas, eventos y bodas.</p>
-          </div>
-
-          <div class="servicio">
-            <img src="tratamiento.jpg" alt="Tratamiento" class="img-servicio" />
-            <h3>Tratamiento repolarizante</h3>
-            <p>Nutre y repara profundamente el cabello.</p>
-          </div>
-
-          <div class="servicio">
-            <img src="alisado.jpg" alt="Alisado" class="img-servicio" />
-            <h3>Alisados permanentes</h3>
-            <p>Cabello liso, suave y manejable por más tiempo.</p>
-          </div>
-
-          <div class="servicio">
-            <img src="planchado.jfif" alt="Ponchado" class="img-servicio" />
-            <h3>planchado</h3>
-            <p>Volumen y estilo para ocasiones especiales.</p>
-          </div>
-
-          <div class="servicio">
-            <img src="ondulado.jfif" alt="Ondulación" class="img-servicio" />
-            <h3>Ondulación permanente</h3>
-            <p>Rizos definidos y duraderos.</p>
-          </div>
-        </div>
-      </section>
-
-      <!--  VIDEOS -->
-      <section class="videos">
-         <h2 class="sobre">Trabajos realizados</h2>
-  <p class="texto-video">
-    Mira algunos cambios reales realizados con dedicación y estilo.
-  </p>
-        <div class="contenedor-video">
-          <div class="video-carrusel">
-            <div class="video-item">
-              <video src="ondulacion.mp4" controls class="video"></video>
-              <p>Este tratamiento refuerza el cabello.</p>
+                <!-- overlay sirve para hacer que el menú lateral se muestre y oculte -->
+                <div id="overlay" class="overlay" onclick="cerrarMenu()"></div>
+              </nav>
+              /.nav
             </div>
+            /.contenedor-header
+          </header>
+          /.header
 
-            <div class="video-item">
-              <video src="alizado.mp4" controls class="video"></video>
-              <p>Ondulación con rizos definidos.</p>
+          <!-- footer de la pagina web-->
+          <footer class="footer">
+            <img src="logsinfo.png" class="logo-footer" />
+
+            <p>Correo: maritzah903@gmail.com</p>
+            <p>
+              Dirección:
+              <a
+                href="https://www.google.com/maps/search/?api=1&query=Montufar+448+Leopoldo+Mercado"
+                target="_blank"
+              >
+                Ver ubicación en Google Maps
+              </a>
+            </p>
+            <p>
+              Referencia del local: Detrás del portal del parque, Juan de
+              Salinas
+            </p>
+
+            <p><strong>Horarios de atención:</strong></p>
+            <p>Lunes a sábado: 9:00 AM - 7:00 PM</p>
+            <p>Domingos: 9:00 AM - 3:00 PM</p>
+
+            <div class="footer-redes">
+              <div class="redes">
+                <a
+                  href="https://www.facebook.com/share/1Ad1HsYDYa/"
+                  target="_blank"
+                >
+                  <img src="iconof.jpg" alt="Facebook" />
+                </a>
+
+                <a href="https://wa.me/593983055897" target="_blank">
+                  <img src="iconow.png" alt="WhatsApp" />
+                </a>
+              </div>
             </div>
-          </div>
-
-          <button class="prev-video">&#10094;</button>
-          <button class="next-video">&#10095;</button>
-        </div>
-
-        <div class="estadisticas">
-  <div class="dato">Calidad garantizada</div>
-  <div class="dato">+10 años de experiencia</div>
-  <div class="dato"> Atención profesional</div>
-</div>
-
-      </section>
-
-      <!-- CONTACTO -->
-      <section class="contacto">
-        <h2 class="sobre">Contáctanos</h2>
-        <p>Agenda tu cita y transforma tu estilo con nosotros.</p>
-
-        <div class="botones-contacto">
-          <a
-            href="https://www.facebook.com/share/1Ad1HsYDYa/"
-            target="_blank"
-            class="btn"
-          >
-            Facebook
-          </a>
-          <br />
-          <a href="https://wa.me/593983055897" target="_blank" class="btn">
-            Chatea en WhatsApp
-          </a>
-        </div>
-      </section>
-    </main>
-
-    <!--  FOOTER -->
- <footer class="footer">
-
-    <img src="logsinfo.png" class="logo-footer">
-
-    <p>Correo: maritzah903@gmail.com</p>
-  <p>
- Dirección: 
-<a href="https://www.google.com/maps/search/?api=1&query=Montufar+448+Leopoldo+Mercado" target="_blank">
-Ver ubicación en Google Maps
-</a>
-</p>
-    <p>Referencia del local: Detrás del portal del parque, Juan de Salinas</p>
-
-    <p><strong>Horarios de atención:</strong></p>
-    <p>Lunes a sábado: 9:00 AM - 7:00 PM</p>
-    <p>Domingos: 9:00 AM - 3:00 PM</p>
-
-    <div class="footer-redes">
-    <div class="redes">
-        <a href="https://www.facebook.com/share/1Ad1HsYDYa/" target="_blank">
-            <img src="iconof.jpg" alt="Facebook">
-        </a>
-
-        <a href="https://wa.me/593983055897" target="_blank">
-            <img src="iconow.png" alt="WhatsApp">
-        </a>
-    </div>
-</div>
-
-</footer>
-    <script src="proyecto.js"></script>
-  </body>
-</html>
+          </footer>
+        </body>
+      </html>
+    </html></html
+></DOCTYPE>
