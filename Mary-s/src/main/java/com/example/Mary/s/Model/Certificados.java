@@ -47,7 +47,7 @@ private LocalDate fecha_vencimiento_certificado;
 private String imagen_certificado;
 /*llave foranea con los empleados */
 @ManyToOne(cascade = CascadeType.REMOVE)
-@JoinColumn(name = "id_empleado", unique = true, nullable = false)
+@JoinColumn(name = "id_empleado", unique = true, nullable = true)
 private Empleados id_empleado;
 
 /*creamos un constructor vacio para recibir los datos */

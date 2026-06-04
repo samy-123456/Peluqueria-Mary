@@ -35,14 +35,7 @@ public class Servicios{
     /*descripcion del servicio */
     @Column(nullable = false, columnDefinition="TEXT")
     private String descripcion_servicio;
-
     /*precio del servicio */
-
-    private String tiempo_servicio;
-    private String imagenUrl_servicio;
-    
-
-
     @Column(nullable = false)
     private Double precio_servicio;
     /*tiempo del servicio */

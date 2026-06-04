@@ -60,13 +60,32 @@ public class Credenciales {
      * atributo
      * es una llave foranea
      */
-    @JoinColumn(name = "id_cliente", unique = true, nullable = false)
+    @JoinColumn(name = "id_cliente", unique = true, nullable = true)
     /*
      * con el OnDelet damos la accionde elliminar y liego especificamos que sea en
      * cascada
      */
     @OnDelete(action = OnDeleteAction.CASCADE)
     private Clientes cliente;
+
+    /* llave foranea con el administrador */
+    /*
+     * el OneToOne dice que una relacion de uno a uno
+     * cascade = CascadeType.REMOVE dice si borro la credencial borra la relacion
+     */
+    @OneToOne(cascade = CascadeType.REMOVE)
+    /*
+     * ya noestablecemos como column sino como join column para especificar que el
+     * atributo
+     * es una llave foranea
+     */
+    @JoinColumn(name = "id_administrador", unique = true, nullable = true)
+    /*
+     * con el OnDelet damos la accionde elliminar y liego especificamos que sea en
+     * cascada
+     */
+    @OnDelete(action = OnDeleteAction.CASCADE)
+    private Administradores administrador;
 
     /* constructor vacio */
     public Credenciales() {
@@ -75,11 +94,12 @@ public class Credenciales {
 
     /* constructor con parametros */
     public Credenciales(String nombre_usuario, String contraseña_usuario,
-            RolUsuario rol_usuario, Clientes cliente) {
+            RolUsuario rol_usuario, Clientes cliente, Administradores administrador) {
         this.nombre_usuario = nombre_usuario;
         this.contraseña_usuario = contraseña_usuario;
         this.rol_usuario = rol_usuario;
         this.cliente = cliente;
+        this.administrador = administrador;
     }
 
     /* METODOS GET Y SET DELOS ATRIBUTOS */
@@ -137,5 +157,10 @@ public class Credenciales {
         this.cliente = cliente;
     }
     
+    /* get del administrador */
+    /* colocamos el nombre de la clase donde esta el atributo */
+    public Administradores get_administrador() {
+        return administrador;
+    }
 
 }
