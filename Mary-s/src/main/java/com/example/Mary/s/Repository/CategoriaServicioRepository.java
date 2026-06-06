@@ -16,5 +16,5 @@ import com.example.Mary.s.Model.CategoriaServicios;
 /* DECLARAMOS QUE ESTO ES UNA INTERFAS NO UNA CLASE */
 @Repository
 public interface CategoriaServicioRepository extends JpaRepository<CategoriaServicios, Long> {
-    List<CategoriaServicios> findByCategoria(String nombre_categoria);
+    List<CategoriaServicios> findBynombre_categoriainsoCase(String nombre_categoria);
 }

@@ -16,5 +16,5 @@ import com.example.Mary.s.Model.Clientes;
 /* DECLARAMOS QUE ES UNA INTERFAZ PARA CONECTAR CON LA DB (NO ES UNA CLASE) */
 @Repository
 public interface ClienteRepository extends JpaRepository<Clientes, Long> {
-    List<Clientes> findByNombreCliente(String nombre_cliente);
+    List<Clientes> findBynombre_clienteinoreCase(String nombre_cliente);
 }

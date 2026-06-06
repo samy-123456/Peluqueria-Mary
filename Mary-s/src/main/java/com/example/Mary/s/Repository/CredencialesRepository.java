@@ -11,8 +11,13 @@ import org.springframework.stereotype.Repository;
 
 import com.example.Mary.s.Model.Credenciales;
 
+import java.util.Optional;
+
 /*le indicamos a java que no es una clase sino una interfas */
 @Repository
 public interface CredencialesRepository extends JpaRepository<Credenciales, Long> {
 
+    Optional<Credenciales> findBynombre_usuarioAndcontraseña_usuario(String nombre_usuario, String contraseña_usuario);
+
+    Optional<Credenciales> findBynombre_usuario(String nombre_usuario);
 }

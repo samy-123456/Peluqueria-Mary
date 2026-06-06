@@ -14,5 +14,5 @@ import com.example.Mary.s.Model.Servicios;
 
 @Repository
 public interface ServicioRepository extends JpaRepository<Servicios, Long> {
-    List<Servicios> findByNombre_servicioignoreCase(String nombre_servicio);
+    List<Servicios> findByNombre_servicioInoreCase(String nombre_servicio);
 }
