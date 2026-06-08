@@ -46,12 +46,6 @@ public class Empleados {
     /*fto del empleado */
     @Column(nullable = false)
     private String imagen_empleado;
-    /*nombre del trabajo del empleado */
-    @Column(nullable = false)
-    private String nombre_trabajo_empleado;
-    /*imagen del trabajo del empleado */
-    @Column(nullable = false)
-    private String imagen_trabajo_empleado;
     /*descripcion del trabajo del empleado */
     @Column(nullable = false)
     private String descripcion_trabajo_empleado;

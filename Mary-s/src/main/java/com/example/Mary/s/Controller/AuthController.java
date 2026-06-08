@@ -6,18 +6,24 @@ Proyect Mary's BarberShop*/
 package com.example.Mary.s.Controller;
 
 /*importamos las librerias del controlador y los modelos y repositorios q vamos a utilizar */
-import jakarta.servlet.http.HttpSession;
+import java.util.Optional;
+
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.*;
-/*importamos librerias para encriptar la contraseña del usuario */
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
-/*importamos todos los archivos de la carpeta model y repository */
-import com.example.Mary.s.Model.*;
-import com.example.Mary.s.Repository.*;
-/*importamos la funcion de opcional */
-import java.util.Optional;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+
+import com.example.Mary.s.Model.Clientes;
+import com.example.Mary.s.Model.Credenciales;
+import com.example.Mary.s.Model.RolUsuario;
+import com.example.Mary.s.Repository.ClienteRepository;
+import com.example.Mary.s.Repository.CredencialesRepository;
+
+import jakarta.servlet.http.HttpSession;
 
 /*establecemos la clase como un controlador */
 /*es decir que va a manejar las rutas web */
