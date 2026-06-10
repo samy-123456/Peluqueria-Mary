@@ -2,7 +2,6 @@
 Desarrollo de Software
 Segundo Nivel
 Proyect Mary's BarberShop*/
-
 package com.example.Mary.s.Controller;
 
 /*importamos las librerias del controlador y los modelos y repositorios q vamos a utilizar */
@@ -26,9 +25,10 @@ import com.example.Mary.s.Repository.CredencialesRepository;
 import jakarta.servlet.http.HttpSession;
 
 /*establecemos la clase como un controlador */
-/*es decir que va a manejar las rutas web */
+ /*es decir que va a manejar las rutas web */
 @Controller
 public class AuthController {
+
     /* spring inyecta directamente al repositorio */
     @Autowired
     private CredencialesRepository credencialesRepository;
@@ -49,11 +49,11 @@ public class AuthController {
 
     /* procesamos el login cuando el usuario envia el formulario */
     @PostMapping("/login")
-    private String procesarLogin(@RequestParam String nombre_usuario, @RequestParam String contraseña_usuario,
+    private String procesarLogin(@RequestParam String nombreUsuario, @RequestParam String contraseña_usuario,
             HttpSession session, Model model) {
 
         /* buscamos en la base d e datos el usuario si es q existe */
-        Optional<Credenciales> credencialOpt = credencialesRepository.findBynombre_usuario(nombre_usuario);
+        Optional<Credenciales> credencialOpt = credencialesRepository.buscarPorNombreUsuario(nombreUsuario);
 
         if (credencialOpt.isPresent()) {
             /* obtenemos los dato del formulario */
@@ -81,9 +81,9 @@ public class AuthController {
     }
 
     /* registro en 2 pasos */
-    /* paso 1 */
-    /*---------- registro para el cliente sin credenciales ---------- */
-    /* mostramos el formilario de registro del cleinte */
+ /* paso 1 */
+ /*---------- registro para el cliente sin credenciales ---------- */
+ /* mostramos el formilario de registro del cleinte */
     @GetMapping("/registrar_cliente")
     public String mostrarRegistroCliente(Model model) {
         /* agregamos un objeto vacio para el formulario */
@@ -95,7 +95,6 @@ public class AuthController {
     /*
      * procedemos a registrar es decir a obtener y guardar los datos del formulario
      */
-
     @PostMapping("/registrar_cliente")
     public String procesarRegistroCliente(@ModelAttribute Clientes cliente, HttpSession session, Model model) {
 
@@ -124,7 +123,7 @@ public class AuthController {
     @GetMapping("/registrar_usuario")
     public String mostrarRegistroUsuario(HttpSession session, Model model) {
         /* validamos que el usuario haya llenado primero el fromulario de cliente */
-        /* lo que definimos antes en la funcion anterior */
+ /* lo que definimos antes en la funcion anterior */
         if (session.getAttribute("clienteEnRegistro") == null) {
             /*
              * si el registro anterior no se lleno y solo dio click en siguiente le
@@ -137,7 +136,7 @@ public class AuthController {
 
     /* procesamos el nombre de usuario y la contraseña */
     @PostMapping("/registrar_usuario")
-    public String porcesarRegistroUsuario(@RequestParam String nombre_usuario, @RequestParam String contraseña_usuario,
+    public String porcesarRegistroUsuario(@RequestParam String nombreUsuario, @RequestParam String contraseña_usuario,
             HttpSession session, Model model) {
 
         /* obtenemos al usuario que lleno el registro anterior */
@@ -145,10 +144,10 @@ public class AuthController {
         /* validamos que el cliente tenga lleno el formulario anterior */
         if (cliente == null) {
             /* le rediriginmos al formulario anterior */
-            return "redirefct:/registrar_cliente";
+            return "redirect:/registrar_cliente";
         }
         /* en caso contrario ahora verificamos que el nombre de usuario no exista */
-        if (credencialesRepository.findBynombre_usuario(nombre_usuario).isPresent()) {
+        if (credencialesRepository.buscarPorNombreUsuario(nombreUsuario).isPresent()) {
             model.addAttribute("error", "El nombre de usuario ya esta en uso");
             return "registrar_usuario";
         }
@@ -157,10 +156,9 @@ public class AuthController {
         String contraseñaEncriptada = passwordEncoder.encode(contraseña_usuario);
 
         /* comenzamos a guardar los datos de usuario */
-
         Credenciales credenciales = new Credenciales();
         /* guardamos el nombre del usuario */
-        credenciales.set_nombre_usuario(nombre_usuario);
+        credenciales.set_nombre_usuario(nombreUsuario);
         /* guardamos la contraseña encriptada */
         credenciales.set_contraseña_usuario(contraseñaEncriptada);
         /* le damos el rol de usuario por default cliente */
@@ -183,7 +181,7 @@ public class AuthController {
     }
 
     /* cierre de la session */
-    /*
+ /*
      * no necesitamos una agina de logout solo es un metodo que le añadiremos a
      * nuetsro boton o navbar
      */
