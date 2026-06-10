@@ -1,0 +1,1188 @@
+:root {
+  --azul-oscuro: #1e2a78;
+  --azul-suave: #3a4cc0;
+  --beige-lujo: #d6cbb8;
+  --gris-fondo: #f5f5f5;
+  --texto: #2c2c2c;
+  --blanco: #ffffff;
+}
+/* HEADER GENERAL */
+.header {
+  background: linear-gradient(90deg, #1e2a78, #3a4cc0);
+  color: white;
+  border-bottom: 4px solid #c62828; /* rojo del logo */
+}
+
+/*nueva abregacion*/
+/*  RESET GLOBAL */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* BODY GENERAL (ÚNICO) */
+body {
+ background:
+    linear-gradient(135deg, rgba(30,42,120,0.05), rgba(255,255,255,0.95)),
+    linear-gradient(45deg, rgba(190,30,45,0.03), rgba(255,255,255,0.9));
+    
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+h1, h2, h3 {
+  color: #ffffff;
+}
+h2 {
+ font-size: 34px;
+  line-height: 1.8;
+  color: #333;
+  margin-bottom: 15px;
+}
+p {
+  color: #444;
+  font-size: 30px; /* más grande */
+  line-height: 1.8; /* más espacio entre líneas */
+  margin-bottom: 25px; /*  separación con lo de abajo */
+}
+
+/* SEPARACIÓN ENTRE SECCIONES */
+section {
+   margin-bottom: 70px;
+  animation: fadeUp 0.8s ease-in-out;
+}
+
+/* CONTENEDOR PRINCIPAL */
+.contenedor-header {
+  display: flex;
+  justify-content: space-between; /* separa elementos */
+  align-items: center; /* centra vertical */
+
+  width: 90%; /* ancho adaptable */
+  max-width: 1200px; /* límite máximo */
+  margin: 0 auto; /* centra todo */
+}
+
+/* TÍTULO */
+.titulo-contenedor {
+  text-align: center;
+  flex: 1; /* ocupa el centro */
+}
+
+.titulo-frase {
+  font-size: 36px;
+  font-weight: bold;
+  color: #ffffff; /* limpio y visible */
+}
+.frase {
+  color: #e0e0e0;
+}
+
+/* MENÚ */
+.menu {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+}
+
+.menu a {
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+  position: relative;
+}
+
+/* EFECTO HOVER (línea animada) */
+.menu a::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  background: #a61c1c; /* rojo del logo */
+  left: 0;
+  bottom: -5px;
+  transition: 0.3s;
+}
+
+.menu a:hover::after {
+  width: 100%;
+}
+
+/*  MAIN GENERAL :)*/
+.main {
+ background: rgba(255,255,255,0.55);
+  padding: 30px;
+  border-radius: 24px;
+  backdrop-filter: blur(6px);
+}
+
+/* ================= BIENVENIDA ================= */
+.bienvenida {
+  text-align: center; /* centra todo el texto */
+  margin-bottom: 40px;
+   background: linear-gradient(135deg, var(--azul-oscuro), var(--azul-suave));
+  color: white;
+  padding: 50px;
+  border-radius: 18px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+.bienvenida,
+.sobre {
+  position: relative;
+  z-index: 2;
+}
+
+.bienvenida h2 {
+  font-size: 48px;
+ color: white;
+  animation: aparecer 1s ease-in-out;
+ 
+}
+
+@keyframes aparecer {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.bienvenida p {
+   font-size: 22px;
+  line-height: 1.8;
+  margin-bottom: 25px;
+  color: #f5f5f5;
+  margin-top: 15px;
+}
+
+/* BOTONES */
+.botones {
+  margin-top: 15px;
+}
+
+
+.btn {
+  background: linear-gradient(45deg, var(--azul-oscuro), var(--azul-suave));
+  color: white;
+  padding: 12px 25px;
+  border-radius: 30px;
+  font-size: 16px;
+  transition: 0.3s;
+}
+
+.btn:hover {
+ background: var(--azul-suave);
+ transform: scale(1.05);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+ 
+}
+
+/*==========CARRUSEL SERVICIOS =========*/
+
+/* CONTENEDOR PRINCIPAL */
+.carrusel-servicios {
+  width: 100%;
+  max-width: 1000px; /* más ancho */
+  margin: 30px auto;
+  overflow: hidden;
+  position: relative;
+  text-align: center;
+}
+
+.sobre {
+  margin-top: 20px;
+  margin-bottom: 15px;
+    color: #1e2a78;
+  font-weight: bold;
+}
+
+.carrusel-servicios p,
+.carrusel p,
+.GALERIA p {
+  margin-bottom: 30px;
+}
+
+.carrusel-servicios,
+.carrusel,
+.GALERIA {
+  margin-top: 60px;
+  margin-bottom: 60px;
+  padding: 20px;
+   position: relative;
+  z-index: 1;
+   background: #ffffff;
+  border-radius: 15px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+}
+
+/* MODAL FONDO OSCURO */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  padding-top: 50px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+
+  background-color: rgba(0, 0, 0, 0.9);
+}
+
+/* IMAGEN GRANDE */
+.modal-contenido {
+  margin: auto;
+  display: block;
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 10px;
+}
+
+/* BOTÓN CERRAR */
+.cerrar {
+  position: absolute;
+  top: 20px;
+  right: 35px;
+  color: white;
+  font-size: 40px;
+  cursor: pointer;
+}
+
+/* IMÁGENES */
+.carrusel-contened img {
+  width: 100%;
+  flex: 0 0 100%;
+  height: 500px; /* tamaño grande */
+  border-radius: 10px;
+  object-fit: contain; 
+}
+
+/* FILA DE IMÁGENES: NUESTROS SERVICIOS */
+.carrusel-contened {
+  display: flex;
+  transition: transform 0.5s ease;
+  height: 450px; 
+  object-fit: contain; 
+  align-items: center; 
+}
+
+/* BOTONES */
+.prev1,
+.next1 {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: #1e2a78; /* azul */
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 50%;
+}
+
+.prev1 {
+  left: 10px;
+}
+.next1 {
+  right: 10px;
+}
+
+/* HOVER IMAGEN */
+.carrusel-contened img:hover {
+  border: 3px solid #1e2a78;
+  transform: scale(1.03);
+}
+
+/* ================= GALERÍA ================= */
+.GALERIA {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+/* CONTENEDOR DE IMÁGENES */
+.contenedor-galeria {
+  display: grid;
+
+  /* IMÁGENES MÁS GRANDES EN FILA */
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+
+  gap: 25px; /* separación */
+  padding: 20px;
+}
+
+/* IMÁGENES */
+.contenedor-galeria img {
+  width: 100%;
+  height: 400px; 
+
+  object-fit: cover; 
+
+  border-radius: 12px;
+
+  /* BORDE AZUL */
+  border: 4px solid #2f3e9e;
+
+  /*  ANIMACIÓN */
+  transition:
+    transform 0.4s ease,
+    box-shadow 0.4s ease,
+    border 0.3s;
+}
+
+/* EFECTO HOVER */
+.contenedor-galeria img:hover {
+  transform: scale(1.08) translateY(-8px); 
+
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+
+  border: 5px solid #1e2a78; 
+}
+
+/* ================= CARRUSEL CERTIFICACIONES================= */
+/* CONTENEDOR PRINCIPAL */
+.carrusel {
+  width: 100%;
+  max-width: 1000px;
+  margin: 30px auto;
+  overflow: hidden; 
+  position: relative;
+  text-align: center;
+}
+
+/* FILA DE IMÁGENES */
+.carrusel-contenedor {
+  display: flex;
+  transition: transform 0.5s ease;
+  align-items: center; /*centra vertical */
+}
+
+/*  imagen ocupa TODO el carrusel */
+.carrusel-contenedor img {
+  width: 100%;
+  flex: 0 0 100%;
+  height: 500px; 
+  border-radius: 10px;
+  align-items: center; 
+  object-fit: contain; 
+}
+/* BOTONES */
+.prev,
+.next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: black;
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+}
+
+/* POSICIÓN DE BOTONES */
+.prev {
+  left: 10px;
+}
+.next {
+  right: 10px;
+}
+
+/* ================= FOOTER ================= */
+/*nueva agregacio*/
+.footer {
+  background: var(--azul-oscuro);
+  color: white;
+  padding: 60px 20px;
+  text-align: center;
+  line-height: 2;
+}
+.footer-redes {
+  background-color: white;
+  padding: 20px 0;
+  margin-top: 20px;
+}
+
+.footer p{
+    color: white;
+    font-size: 30px;
+    font-weight: 600;
+    margin: 12px 0;
+    line-height: 1.7;
+}
+
+.footer a{
+    color: #ffd166;
+    font-size: 34px;
+    font-weight: bold;
+    padding: 6px 12px;
+    text-decoration: none;
+    border-radius: 8px;
+}
+
+.footer a:hover {
+   color: white;
+  text-decoration: underline;
+}
+.redes {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+}
+
+.redes a {
+  display: inline-block;
+  margin: 10px;
+  text-decoration: none;
+}
+
+/* TAMAÑO DE LOS ICONOS */
+.redes img {
+  width: 100px; 
+  height: 100px;
+  object-fit: contain;
+
+  transition: transform 0.3s ease;
+}
+/* ÍCONOS */
+.redes i {
+  font-size: 18px;
+}
+
+/* HOVER BONITO */
+.redes a:hover {
+  background-color: white;
+  color: #1e2a78;
+  transform: scale(1.05);
+}
+
+.redes img:hover {
+  transform: scale(1.2);
+}
+
+/*NUEVA AGRGACION SABADO*/
+/* BOTÓN MENÚ DE DESPLAZAMIENTO LATERAL */
+.menu-btn {
+  font-size: 28px;
+
+  background-color: white; 
+  color: #1e2a78;
+
+  border: none;
+  border-radius: 10px; 
+
+  padding: 8px 12px; 
+  cursor: pointer;
+
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); 
+
+  transition: all 0.3s ease;
+}
+
+.menu-btn:hover {
+  background-color: #1e2a78;
+  color: white;
+
+  transform: scale(1.1);
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+}
+
+/* MENÚ LATERAL */
+.menu-lateral {
+  position: fixed;
+  top: 0;
+  left: 0; 
+  width: 280px;
+  height: 100vh;
+ background: linear-gradient(180deg, var(--azul-oscuro), var(--azul-suave));
+  box-shadow: 5px 0 25px rgba(0,0,0,0.3);
+  display: flex;
+  flex-direction: column;
+  padding-top: 80px;
+
+  transform: translateX(-100%); 
+  transition: transform 0.4s ease;
+
+  z-index: 9999;
+}
+/* CUANDO SE ACTIVA */
+.menu-lateral.activo {
+  transform: translateX(0); /* aparece */
+}
+
+/* LINKS */
+.menu-lateral a {
+   color: white;
+  text-decoration: none;
+
+  padding: 18px 25px;
+  font-size: 20px; 
+  font-weight: 600;
+
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  transition: 0.3s;
+}
+
+.menu-lateral a:hover {
+  background-color: rgba(255, 255, 255, 0.15);
+border-left: 4px solid #ffd166;
+  padding-left: 25px;
+}
+.menu-lateral::before {
+  content: "Menú";
+  color: white;
+  font-size: 22px;
+  font-weight: bold;
+
+  position: absolute;
+  top: 30px;
+  left: 20px;
+}
+
+.menu-lateral a i {
+  font-size: 22px;
+}
+
+/* OVERLAY (fondo oscuro) */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  background: rgba(0, 0, 0, 0.6);
+
+  opacity: 0;
+  visibility: hidden;
+
+  transition: 0.3s;
+  z-index: 2000;
+}
+
+/* CUANDO SE ACTIVA */
+.overlay.activo {
+  opacity: 1;
+  visibility: visible;
+}
+
+.bienvenida p {
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+.carrusel-servicios,
+.carrusel,
+.GALERIA {
+  margin-top: 50px;
+}
+
+
+/* ===================================== */
+/* RESPONSIVE GENERAL MOVIL */
+/* ===================================== */
+
+@media (max-width: 768px) {
+
+  body {
+    overflow-x: hidden;
+  }
+
+  /* HEADER */
+  .contenedor-header {
+    flex-direction: column;
+    gap: 15px;
+    text-align: center;
+  }
+
+  .titulo-frase {
+    font-size: 28px;
+    line-height: 1.3;
+  }
+
+
+  /* MAIN */
+  .main {
+    padding: 15px;
+    border-radius: 18px;
+  }
+
+  /* TEXTOS */
+  h1 {
+    font-size: 30px !important;
+  }
+
+  h2 {
+    font-size: 26px !important;
+  }
+
+  h3 {
+    font-size: 22px !important;
+  }
+
+  p {
+    font-size: 18px !important;
+    line-height: 1.6;
+  }
+
+  /* BOTONES */
+  .btn {
+    display: block;
+    width: 100%;
+    text-align: center;
+    font-size: 18px;
+    padding: 14px;
+    margin-top: 10px;
+  }
+
+  /* FOOTER */
+  .footer p {
+    font-size: 18px !important;
+  }
+
+  .redes img {
+    width: 70px;
+    height: 70px;
+  }
+}
+
+/* ===================================== */
+/* RESPONSIVE CARRUSELES */
+/* ===================================== */
+
+@media (max-width: 768px) {
+
+  /* SERVICIOS */
+  .lista-servicios {
+    grid-template-columns: 1fr !important;
+    gap: 20px;
+  }
+
+  .servicio {
+    padding: 15px;
+  }
+
+  .img-servicio {
+    height: 220px;
+  }
+
+  /* GALERIA */
+  .contenedor-galeria {
+    grid-template-columns: 1fr !important;
+    padding: 10px;
+    gap: 18px;
+  }
+
+  .contenedor-galeria img {
+    height: 260px;
+  }
+
+  /* CARRUSELES */
+  .carrusel-contenedor img,
+  .carrusel-contened img {
+    height: 260px;
+  }
+
+  .carrusel-contenedor,
+  .carrusel-contened {
+    height: auto;
+  }
+
+  /* VIDEOS */
+  .video {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  /* ESTADISTICAS */
+  .estadisticas {
+    grid-template-columns: 1fr !important;
+  }
+
+  .dato {
+    font-size: 24px !important;
+  }
+}
+
+/* ===================================== */
+/*  RESPONSIVE */
+/* ===================================== */
+
+@media (max-width: 768px) {
+
+  /* MENU BOTON */
+  .menu-btn {
+    font-size: 24px;
+    padding: 10px 14px;
+  }
+
+  /* MENU LATERAL */
+  .menu-lateral {
+    width: 240px;
+  }
+
+  .menu-lateral a {
+    font-size: 18px;
+    padding: 16px 20px;
+  }
+
+  /* FOOTER */
+  .footer {
+    padding: 35px 15px;
+  }
+
+  .footer-redes {
+    padding: 15px;
+  }
+
+  .redes {
+    flex-wrap: wrap;
+    gap: 15px;
+  }
+
+  .redes img {
+    width: 65px;
+    height: 65px;
+  }
+
+}
+
+/* CELULARES MUY PEQUEÑOS */
+@media (max-width: 480px) {
+
+  h1 {
+    font-size: 26px !important;
+  }
+
+  h2 {
+    font-size: 22px !important;
+  }
+
+  p {
+    font-size: 16px !important;
+  }
+
+  .titulo-frase {
+    font-size: 24px;
+  }
+
+  .dato {
+    font-size: 20px !important;
+  }
+
+  .texto-video {
+    font-size: 22px !important;
+  }
+
+}
+
+.carrusel-servicios{
+  background: linear-gradient(135deg, #d8e7ff, #bcd4ff, #eef4ff);
+  border: 2px solid rgba(30,42,120,0.15);
+  box-shadow: 0 12px 28px rgba(30,42,120,0.12);
+}
+
+/* CUADRO DE CERTIFICACIONES */
+.carrusel{
+  background: linear-gradient(135deg, #d9f1ff, #b8e2ff, #eef9ff);
+  border: 2px solid rgba(58,76,192,0.15);
+  box-shadow: 0 12px 28px rgba(58,76,192,0.12);
+}
+
+/* RECTANGULO DEL LOCAL / GALERIA */
+.GALERIA{
+  background: linear-gradient(135deg, #e4edff, #cfe0ff, #f4f8ff);
+  border: 2px solid rgba(166,28,28,0.12);
+  box-shadow: 0 12px 28px rgba(0,0,0,0.08);
+}
+
+/* TITULOS MÁS ELEGANTES */
+.carrusel-servicios h2,
+.carrusel h2,
+.GALERIA h2{
+  color: #1e2a78;
+}
+
+/* TEXTO */
+.carrusel-servicios p,
+.carrusel p,
+.GALERIA p{
+  color: #333;
+}
+
+/* FONDO CUADRO NUESTROS SERVICIOS */
+.carrusel-servicios{
+  background: linear-gradient(135deg,#d7e7ff,#b7d1ff,#edf4ff);
+  border: 1px solid rgba(255,255,255,0.7);
+  border-top: 5px solid #1e2a78;
+  border-radius: 22px;
+  box-shadow:
+  0 15px 35px rgba(30,42,120,0.15),
+  inset 0 1px 0 rgba(255,255,255,0.7);
+  backdrop-filter: blur(8px);
+  transition: 0.4s ease;
+}
+
+.carrusel-servicios:hover{
+  transform: translateY(-6px);
+  box-shadow:
+  0 22px 45px rgba(30,42,120,0.20);
+}
+
+/* FONDO CUADRO CERTIFICACIONES */
+.carrusel{
+  background: linear-gradient(135deg,#d9f6ff,#b8e8ff,#eefcff);
+  border: 1px solid rgba(255,255,255,0.7);
+  border-top: 5px solid #3a4cc0;
+  border-radius: 22px;
+  box-shadow:
+  0 15px 35px rgba(58,76,192,0.15),
+  inset 0 1px 0 rgba(255,255,255,0.7);
+  backdrop-filter: blur(8px);
+  transition: 0.4s ease;
+}
+
+.carrusel:hover{
+  transform: translateY(-6px);
+  box-shadow:
+  0 22px 45px rgba(58,76,192,0.20);
+}
+
+/* FONDO GALERIA LOCAL */
+.GALERIA{
+  background: linear-gradient(135deg,#eaf0ff,#d8e5ff,#f9fbff);
+  border: 1px solid rgba(255,255,255,0.7);
+  border-top: 5px solid #c62828;
+  border-radius: 22px;
+  box-shadow:
+  0 15px 35px rgba(0,0,0,0.08),
+  inset 0 1px 0 rgba(255,255,255,0.7);
+  backdrop-filter: blur(8px);
+  transition: 0.4s ease;
+}
+
+.GALERIA:hover{
+  transform: translateY(-6px);
+  box-shadow:
+  0 22px 45px rgba(0,0,0,0.12);
+}
+
+/* TITULOS PREMIUM */
+.carrusel-servicios h2,
+.carrusel h2,
+.GALERIA h2{
+  color:#1e2a78;
+  font-weight:800;
+  letter-spacing:1px;
+  text-shadow:0 2px 6px rgba(0,0,0,0.08);
+}
+
+/* TEXTOS */
+.carrusel-servicios p,
+.carrusel p,
+.GALERIA p{
+  color:#333;
+  font-weight:500;
+}
+
+/* ===================================== */
+/* ANIMACIONES ELEGANTES PARA CARRUSELES */
+/* ===================================== */
+
+/* ENTRADA SUAVE */
+@keyframes aparecerZoom {
+  from{
+    opacity:0;
+    transform: translateY(40px) scale(0.96);
+  }
+  to{
+    opacity:1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* BRILLO MOVIENDOSE */
+@keyframes brilloMover {
+  0%{
+    left:-140%;
+  }
+  100%{
+    left:140%;
+  }
+}
+
+/* FLOTAR SUAVE */
+@keyframes flotarSuave {
+  0%{transform: translateY(0);}
+  50%{transform: translateY(-6px);}
+  100%{transform: translateY(0);}
+}
+
+/* ===================================== */
+/* CARRUSEL NUESTROS SERVICIOS */
+/* ===================================== */
+
+.carrusel-servicios{
+  animation: aparecerZoom 1s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.carrusel-servicios::before{
+  content:"";
+  position:absolute;
+  top:0;
+  left:-140%;
+  width:45%;
+  height:100%;
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(255,255,255,0.45),
+    transparent
+  );
+  animation: brilloMover 4.5s linear infinite;
+}
+
+/* IMAGENES DEL CARRUSEL */
+.carrusel-contened img{
+  transition: transform 0.45s ease, box-shadow 0.45s ease;
+}
+
+.carrusel-contened img:hover{
+  transform: scale(1.05);
+  box-shadow: 0 18px 35px rgba(0,0,0,0.22);
+}
+
+/* ===================================== */
+/* CARRUSEL CERTIFICACIONES */
+/* ===================================== */
+
+.carrusel{
+  animation: aparecerZoom 1.2s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.carrusel::before{
+  content:"";
+  position:absolute;
+  top:0;
+  left:-140%;
+  width:45%;
+  height:100%;
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(255,255,255,0.40),
+    transparent
+  );
+  animation: brilloMover 5s linear infinite;
+}
+
+.carrusel-contenedor img{
+  transition: transform 0.45s ease, box-shadow 0.45s ease;
+}
+
+.carrusel-contenedor img:hover{
+  transform: scale(1.04);
+  box-shadow: 0 18px 35px rgba(0,0,0,0.20);
+}
+
+/* ===================================== */
+/* GALERIA DEL LOCAL */
+/* ===================================== */
+
+.GALERIA{
+  animation: aparecerZoom 1.3s ease;
+}
+
+.contenedor-galeria img{
+  animation: flotarSuave 4s ease-in-out infinite;
+}
+
+/* DIFERENTES TIEMPOS PARA QUE NO SE MUEVAN IGUAL */
+.contenedor-galeria img:nth-child(2){
+  animation-delay: 0.5s;
+}
+
+.contenedor-galeria img:nth-child(3){
+  animation-delay: 1s;
+}
+
+.contenedor-galeria img:nth-child(4){
+  animation-delay: 1.5s;
+}
+
+/* HOVER MAS PRO */
+.contenedor-galeria img:hover{
+  transform: scale(1.08) translateY(-10px);
+  box-shadow: 0 20px 38px rgba(0,0,0,0.25);
+}
+
+/* ===================================== */
+/* BOTONES DE FLECHAS MÁS BONITOS */
+/* ===================================== */
+
+.prev,
+.next,
+.prev1,
+.next1{
+  transition: 0.35s ease;
+}
+
+.prev:hover,
+.next:hover,
+.prev1:hover,
+.next1:hover{
+  transform: translateY(-50%) scale(1.14);
+  box-shadow: 0 10px 22px rgba(0,0,0,0.22);
+}
+
+/* ===================================== */
+/* LOGO HEADER / NAVBAR DEFINITIVO */
+/* ===================================== */
+
+.logo-img{
+    width: 280px !important;
+    max-width: 100%;
+    height: auto;
+    display: block;
+
+    padding: 10px 16px;
+
+    background: linear-gradient(135deg,#ffffff,#eef3ff,#dfe7ff);
+
+    border: 3px solid #c62828;
+    border-radius: 20px;
+
+    box-shadow:
+        0 10px 22px rgba(0,0,0,0.18),
+        0 0 15px rgba(58,76,192,0.18);
+
+    transition: all 0.4s ease;
+}
+
+/* EFECTO HOVER */
+.logo-img:hover{
+    transform: scale(1.05) translateY(-2px);
+
+    box-shadow:
+        0 14px 28px rgba(0,0,0,0.20),
+        0 0 18px rgba(198,40,40,0.22);
+}
+
+/* TABLET */
+@media (max-width:768px){
+
+.logo-img{
+    width: 220px !important;
+    padding: 8px 12px;
+}
+
+}
+
+/* CELULAR */
+@media (max-width:480px){
+
+.logo-img{
+    width: 180px !important;
+    padding: 6px 10px;
+}
+
+}
+.logo-footer,
+.logo-footer-reserva{
+    width: 240px !important;
+}
+
+/* ===================================== */
+/* LOGOS DEFINITIVOS */
+/* ===================================== */
+
+.logo-img{
+    width: 320px !important;
+    max-width: 100%;
+    height: auto;
+    display: block;
+
+    padding: 12px 18px;
+    background: linear-gradient(135deg,#ffffff,#eef3ff,#dfe7ff);
+
+    border: 3px solid #c62828;
+    border-radius: 22px;
+
+    box-shadow:
+      0 10px 25px rgba(0,0,0,0.18),
+      0 0 18px rgba(58,76,192,0.20);
+}
+
+/* FOOTERS */
+.logo-footer,
+.logo-footer-reserva{
+    width: 270px !important;
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto 18px auto;
+}
+
+/* TABLET */
+@media (max-width:768px){
+
+.logo-img{
+    width: 230px !important;
+}
+
+.logo-footer,
+.logo-footer-reserva{
+    width: 210px !important;
+}
+
+}
+
+/* CELULAR */
+@media (max-width:480px){
+
+.logo-img{
+    width: 180px !important;
+}
+
+.logo-footer,
+.logo-footer-reserva{
+    width: 170px !important;
+}
+
+}
+
+@media (max-width:768px){
+
+.footer p{
+    font-size: 22px !important;
+}
+
+.footer a{
+    font-size: 22px !important;
+}
+
+}

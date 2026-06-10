@@ -2,7 +2,6 @@
 Desarrollo de Software
 Segundo Nivel
 Proyect Mary's BarberShop*/
-
 package com.example.Mary.s.Model;
 
 /*importamos las librerias necesarias que vamos a usar */
@@ -16,17 +15,17 @@ import jakarta.persistence.Table;
 /*declaramos que esto es una entidad de sql no una clase java */
 @Entity
 /*colocamos el nombre de la tabla del sql */
-@Table(name="empleados")
+@Table(name = "empleados")
 public class Empleados {
 
     /*declaramos cuakl es la clave primaria */
     @Id
     /*lgeneramos la columna de la llave primaria */
-    @GeneratedValue(strategy= GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id_empleado;
     /*declaramos lpos atributos faltantes */
-    /*el nombre del empleado */
-    @Column(nullable=false)
+ /*el nombre del empleado */
+    @Column(nullable = false)
     private String nombre_empleado;
     /*el apellido del empleado */
     @Column(nullable = false)
@@ -34,11 +33,11 @@ public class Empleados {
     /*telefono del empleado */
     @Column(length = 15)
     private String telefono_empleado;
-    @Column(unique = true , nullable = false)
+    @Column(unique = true, nullable = false)
     /*correo del empleado */
     private String correo_empleado;
     /*cargo del empleado */
-    @Column (nullable = false)
+    @Column(nullable = false)
     private String cargo_empleado;
     /*salario del empleado */
     @Column(nullable = false)
@@ -46,23 +45,28 @@ public class Empleados {
     /*fto del empleado */
     @Column(nullable = false)
     private String imagen_empleado;
+    /*nombre del trabajo del empleado */
+    @Column(nullable = false)
+    private String nombre_trabajo_empleado;
+    /*imagen trabajo empleado */
+    @Column(nullable = false)
+    private String imagen_trabajo_empleado;
     /*descripcion del trabajo del empleado */
     @Column(nullable = false)
     private String descripcion_trabajo_empleado;
 
     /*creamos el constructor vacio */
-    public Empleados(){
-
+    public Empleados() {
 
     }
 
     /*constructor con parametrso */
     public Empleados(String nombre_empleado, String apellido_empleado, String telefono_empleado,
-    String correo_empleado, String cargo_empleado, Double salario_empleado, String imagen_empleado,
-    String nombre_trabajo_empleado, String imagen_trabajo_empleado, String descripcion_trabajo_empleado) {
-        this.nombre_empleado=nombre_empleado;
+            String correo_empleado, String cargo_empleado, Double salario_empleado, String imagen_empleado,
+            String nombre_trabajo_empleado, String imagen_trabajo_empleado, String descripcion_trabajo_empleado) {
+        this.nombre_empleado = nombre_empleado;
         this.apellido_empleado = apellido_empleado;
-        this.telefono_empleado=telefono_empleado;
+        this.telefono_empleado = telefono_empleado;
         this.correo_empleado = correo_empleado;
         this.cargo_empleado = cargo_empleado;
         this.salario_empleado = salario_empleado;
@@ -73,7 +77,7 @@ public class Empleados {
     }
 
     /*METODOS GET Y SET */
-    /*get del id_empleado */
+ /*get del id_empleado */
     public Long get_id_empleado() {
         return id_empleado;
     }
@@ -182,5 +186,5 @@ public class Empleados {
     public void set_descripcion_trabajo_empleado(String descripcion_trabajo_empleado) {
         this.descripcion_trabajo_empleado = descripcion_trabajo_empleado;
     }
-    
+
 }
