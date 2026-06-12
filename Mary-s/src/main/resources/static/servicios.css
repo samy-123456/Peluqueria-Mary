@@ -83,7 +83,7 @@ body {
   border-radius: 18px;
   padding: 20px;
   text-align: center;
-box-shadow: 0 10px 22px rgba(0,0,0,0.06);
+box-shadow: 0 10px 22px rgba(87, 54, 54, 0.06);
   transition: all 0.4s ease;
    position: relative;
   overflow: hidden;

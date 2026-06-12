@@ -1,265 +1,217 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
+  <!--permite la coneccion con html y java-->
 
-<!--permite la coneccion con html y java-->
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>paginaweb</title>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>paginaweb</title>
+    <link rel="stylesheet" th:href="@{/estilos.css}" />
+    <link rel="stylesheet" th:href="@{/servicios.css}" />
+    <link rel="stylesheet" th:href="@{/contactanos.css}" />
 
-  <link rel="stylesheet" th:href="@{/static/uploads/estilos.css}" />
-  <link rel="stylesheet" th:href="@{/static/uploads/servicios.css}" />
-  <link rel="stylesheet" th:href="@{/static/uploads/contactanos.css}" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;700&display=swap"
+      rel="stylesheet"
+    />
 
-  <link
-    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;700&display=swap"
-    rel="stylesheet"
-  />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+  </head>
 
-  <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
-  />
-</head> 
-
-<body>
-
-  <!-- HEADER -->
-  <header class="header">
-
-    <div class="contenedor-header">
-
-      <!-- Logo -->
-      <div class="logo-contenedor">
-        <img th:src="@{/uploads/images/logsinfo.png}" alt="Logo" class="logo-img" />
-      </div>
-
-      <!-- Título -->
-      <div class="titulo-contenedor">
-        <h1 class="titulo-frase">Peluquería Mary</h1>
-        <p class="frase">Realza tu belleza, transforma tu estilo</p>
-      </div>
-
-      <!-- Menú -->
-      <nav class="nav">
-
-        <!-- BOTÓN -->
-        <button class="menu-btn" onclick="toggleMenu()">☰</button>
-
-        <!-- MENÚ LATERAL -->
-        <div id="menu-lateral" class="menu-lateral">
-
-          <a th:href="@{/}">
-            <i class="fa-solid fa-house"></i> Inicio
-          </a>
-
-          <a th:href="@{/servicios}">
-            <i class="fa-solid fa-scissors"></i> Servicios
-          </a>
-
-          <a th:href="@{/contactanos}">
-            <i class="fa-solid fa-phone"></i> Contacto
-          </a>
-
+  <body>
+    <!-- HEADER -->
+    <header class="header">
+      <div class="contenedor-header">
+        <!-- Logo -->
+        <div class="logo-contenedor">
+          <img
+            th:src="@{/uploads/images/logsinfo.png}"
+            alt="Logo"
+            class="logo-img"
+          />
         </div>
 
-        <!-- OVERLAY -->
-        <div id="overlay" class="overlay" onclick="cerrarMenu()"></div>
+        <!-- Título -->
+        <div class="titulo-contenedor">
+          <h1 class="titulo-frase">Peluquería Mary</h1>
+          <p class="frase">Realza tu belleza, transforma tu estilo</p>
+        </div>
 
-      </nav>
+        <!-- Menú -->
+        <nav class="nav">
+          <!-- BOTÓN -->
+          <button class="menu-btn" onclick="toggleMenu()">☰</button>
 
-    </div>
+          <!-- MENÚ LATERAL -->
+          <div id="menu-lateral" class="menu-lateral">
+            <a th:href="@{/}"> <i class="fa-solid fa-house"></i> Inicio </a>
 
-  </header>
+            <a th:href="@{/servicios}">
+              <i class="fa-solid fa-scissors"></i> Servicios
+            </a>
 
-  <!--  MAIN -->
-  <main class="main">
+            <a th:href="@{/contactanos}">
+              <i class="fa-solid fa-phone"></i> Contacto
+            </a>
+          </div>
 
-    <!-- Bienvenida -->
-    <section class="bienvenida">
+          <!-- OVERLAY -->
+          <div id="overlay" class="overlay" onclick="cerrarMenu()"></div>
+        </nav>
+      </div>
+    </header>
 
-      <h2>Bienvenidos a nuestra peluquería</h2>
+    <!--  MAIN -->
+    <main class="main">
+      <!-- Bienvenida -->
+      <section class="bienvenida">
+        <h2>Bienvenidos a nuestra peluquería</h2>
+
+        <p>Te ofrecemos la mejor atención para resaltar tu belleza.</p>
+
+        <br />
+
+        <!--botones-->
+        <!-- enlazar un boton con la pagina-->
+        <div class="botones">
+          <a th:href="@{/servicios}" class="btn"> Ver servicios </a>
+
+          <a th:href="@{/contactanos}" class="btn"> Contactos </a>
+        </div>
+      </section>
+
+      <!-- Resumen de servicios -->
+
+      <div class="carrusel-servicios">
+        <h2 class="sobre">Nuestros servicios</h2>
+
+        <p>
+          Ofrecemos cortes modernos, tintes profesionales, manicure y peinados
+          para toda ocasión.
+        </p>
+
+        <div class="carrusel-contened">
+          <img th:src="@{/static/uploads/images/peinadosbodas.jpg}" />
+
+          <img th:src="@{/static/uploads/images/corteshombre.jpg}" />
+
+          <img th:src="@{/static/uploads/images/cortem.png}" />
+
+          <img th:src="@{/static/uploads/images/tintecacorto.jpg}" />
+
+          <img th:src="@{/static/uploads/images/tinte.jfif}" />
+
+          <img th:src="@{/static/uploads/images/tratamiento.jpg}" />
+
+          <img th:src="@{/static/uploads/images/manicure.jpg}" />
+        </div>
+
+        <button class="prev1">&#10094;</button>
+
+        <button class="next1">&#10095;</button>
+      </div>
+
+      <!-- MODAL PARA IMAGEN -->
+      <div id="modal" class="modal">
+        <span class="cerrar">&times;</span>
+
+        <img class="modal-contenido" id="img-grande" />
+      </div>
+
+      <!-- ********=======GALERIA-- ANADIR IMG DEL LOCAL -->
+      <section class="GALERIA">
+        <h2 class="sobre">Nuestro local</h2>
+
+        <p>Conoce nuestro espacio de trabajo</p>
+
+        <!--Contenidos-->
+        <div class="contenedor-galeria">
+          <img th:src="@{/static/uploads/images/local1.jpeg}" />
+
+          <img th:src="@{/static/uploads/images/local2.jpeg}" />
+
+          <img th:src="@{/static/uploads/images/local3.jpeg}" />
+        </div>
+
+      </section>
+
+ <!-- ********=======VIDEOS-- ANADIR VIDEOS DE TICTOK -->
+  <!-- ********=======-- ANADIR tres cuadritos.--> 
+
+      <!-- CARRUSEL certificaciones -->
+      <div class="carrusel">
+        <h2 class="sobre">Certificaciones</h2>
+
+        <p>Contamos con formacion profesional y diplomas en belleza.</p>
+
+        <!-- Contenedor que se mueve -->
+        <div class="carrusel-contenedor">
+          <img th:src="@{/static/uploads/images/1.jpeg}" />
+
+          <img th:src="@{/static/uploads/images/2.jpeg}" />
+
+          <img th:src="@{/static/uploads/images/3.jpeg}" />
+
+          <img th:src="@{/static/uploads/images/4.jpeg}" />
+
+          <img th:src="@{/static/uploads/images/5.jpeg}" />
+
+          <img th:src="@{/static/uploads/images/6.jpeg}" />
+        </div>
+
+        <!-- Botones -->
+        <button class="prev">&#10094;</button>
+
+        <button class="next">&#10095;</button>
+      </div>
+    </main>
+
+    <!--  FOOTER -->
+
+    <footer class="footer">
+      <img
+        th:src="@{/static/uploads/images/logsinfo.png}"
+        class="logo-footer"
+      />
+
+      <p>Correo: maritzah903@gmail.com</p>
 
       <p>
-        Te ofrecemos la mejor atención para resaltar tu belleza.
-      </p>
-
-      <br />
-
-      <!--botones-->
-      <!-- enlazar un boton con la pagina-->
-      <div class="botones">
-
-        <a th:href="@{/servicios}" class="btn">
-          Ver servicios
-        </a>
-
-        <a th:href="@{/contactanos}" class="btn">
-          Contactos
-        </a>
-
-      </div>
-
-    </section>
-
-    <!-- Resumen de servicios -->
-
-    <div class="carrusel-servicios">
-
-      <h2 class="sobre">Nuestros servicios</h2>
-
-      <p>
-        Ofrecemos cortes modernos, tintes profesionales,
-        manicure y peinados para toda ocasión.
-      </p>
-
-      <div class="carrusel-contened">
-
-        <img th:src="@{/static/uploads/images/peinadosbodas.jpg}" />
-
-        <img th:src="@{/static/uploads/images/corteshombre.jpg}" />
-
-        <img th:src="@{/static/uploads/images/cortem.png}" />
-
-        <img th:src="@{/static/uploads/images/tintecacorto.jpg}" />
-
-        <img th:src="@{/static/uploads/images/tinte.jfif}" />
-
-        <img th:src="@{/static/uploads/images/tratamiento.jpg}" />
-
-        <img th:src="@{/static/uploads/images/manicure.jpg}" />
-
-      </div>
-
-      <button class="prev1">&#10094;</button>
-
-      <button class="next1">&#10095;</button>
-
-    </div>
-
-    <!-- MODAL PARA IMAGEN -->
-    <div id="modal" class="modal">
-
-      <span class="cerrar">&times;</span>
-
-      <img class="modal-contenido" id="img-grande" />
-
-    </div>
-
-    <!-- ********=======GALERIA-- ANADIR IMG DEL LOCAL -->
-    <section class="GALERIA">
-
-      <h2 class="sobre">Nuestro local</h2>
-
-      <p>Conoce nuestro espacio de trabajo</p>
-
-      <!--Contenedos-->
-      <div class="contenedor-galeria">
-
-        <img th:src="@{/static/uploads/images/local1.jpeg}" />
-
-        <img th:src="@{/static/uploads/images/local2.jpeg}" />
-
-        <img th:src="@{/static/uploads/images/local3.jpeg}" />
-
-      </div>
-
-    </section>
-
-    <!-- CARRUSEL certificaciones -->
-    <div class="carrusel">
-
-      <h2 class="sobre">Certificaciones</h2>
-
-      <p>
-        Contamos con formacion profesional y diplomas en belleza.
-      </p>
-
-      <!-- Contenedor que se mueve -->
-      <div class="carrusel-contenedor">
-
-        <img th:src="@{/static/uploads/images/1.jpeg}" />
-
-        <img th:src="@{/static/uploads/images/2.jpeg}" />
-
-        <img th:src="@{/static/uploads/images/3.jpeg}" />
-
-        <img th:src="@{/static/uploads/images/4.jpeg}" />
-
-        <img th:src="@{/static/uploads/images/5.jpeg}" />
-
-        <img th:src="@{/static/uploads/images/6.jpeg}" />
-
-      </div>
-
-      <!-- Botones -->
-      <button class="prev">&#10094;</button>
-
-      <button class="next">&#10095;</button>
-
-    </div>
-
-  </main>
-
-  <!--  FOOTER -->
-
-  <footer class="footer">
-
-    <img th:src="@{/static/uploads/images/logsinfo.png}" class="logo-footer" />
-
-    <p>Correo: maritzah903@gmail.com</p>
-
-    <p>
-      Dirección:
-
-      <a
-        href="https://www.google.com/maps/search/?api=1&query=Montufar+448+Leopoldo+Mercado"
-        target="_blank"
-      >
-        Ver ubicación en Google Maps
-      </a>
-
-    </p>
-
-    <p>
-      Referencia del local:
-      Detrás del portal del parque, Juan de Salinas
-    </p>
-
-    <p><strong>Horarios de atención:</strong></p>
-
-    <p>Lunes a sábado: 9:00 AM - 7:00 PM</p>
-
-    <p>Domingos: 9:00 AM - 3:00 PM</p>
-
-    <div class="footer-redes">
-
-      <div class="redes">
+        Dirección:
 
         <a
-          href="https://www.facebook.com/share/1Ad1HsYDYa/"
+          href="https://www.google.com/maps/search/?api=1&query=Montufar+448+Leopoldo+Mercado"
           target="_blank"
         >
-          <img th:src="@{/static/uploads/images/iconof.jpg}" alt="Facebook" />
+          Ver ubicación en Google Maps
         </a>
+      </p>
 
-        <a
-          href="https://wa.me/593983055897"
-          target="_blank"
-        >
-          <img th:src="@{/static/uploads/images/iconow.png}" alt="WhatsApp" />
-        </a>
+      <p>Referencia del local: Detrás del portal del parque, Juan de Salinas</p>
 
+      <p><strong>Horarios de atención:</strong></p>
+
+      <p>Lunes a sábado: 9:00 AM - 7:00 PM</p>
+
+      <p>Domingos: 9:00 AM - 3:00 PM</p>
+
+      <div class="footer-redes">
+        <div class="redes">
+          <a href="https://www.facebook.com/share/1Ad1HsYDYa/" target="_blank">
+            <img th:src="@{/static/uploads/images/iconof.jpg}" alt="Facebook" />
+          </a>
+
+          <a href="https://wa.me/593983055897" target="_blank">
+            <img th:src="@{/static/uploads/images/iconow.png}" alt="WhatsApp" />
+          </a>
+        </div>
       </div>
+    </footer>
 
-    </div>
-
-  </footer>
-
-  <script th:src="@{/static/uploads/proyecto.js}"></script>
-
-</body>
-
+    <script th:src="@{/proyecto.js}"></script>
+  </body>
 </html>
-

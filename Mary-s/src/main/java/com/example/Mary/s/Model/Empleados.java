@@ -46,11 +46,7 @@ public class Empleados {
     @Column(nullable = false)
     private String imagen_empleado;
     /*nombre del trabajo del empleado */
-    @Column(nullable = false)
-    private String nombre_trabajo_empleado;
-    /*imagen trabajo empleado */
-    @Column(nullable = false)
-    private String imagen_trabajo_empleado;
+  
     /*descripcion del trabajo del empleado */
     @Column(nullable = false)
     private String descripcion_trabajo_empleado;
@@ -63,7 +59,7 @@ public class Empleados {
     /*constructor con parametrso */
     public Empleados(String nombre_empleado, String apellido_empleado, String telefono_empleado,
             String correo_empleado, String cargo_empleado, Double salario_empleado, String imagen_empleado,
-            String nombre_trabajo_empleado, String imagen_trabajo_empleado, String descripcion_trabajo_empleado) {
+             String descripcion_trabajo_empleado) {
         this.nombre_empleado = nombre_empleado;
         this.apellido_empleado = apellido_empleado;
         this.telefono_empleado = telefono_empleado;
@@ -71,8 +67,6 @@ public class Empleados {
         this.cargo_empleado = cargo_empleado;
         this.salario_empleado = salario_empleado;
         this.imagen_empleado = imagen_empleado;
-        this.nombre_trabajo_empleado = nombre_trabajo_empleado;
-        this.imagen_trabajo_empleado = imagen_trabajo_empleado;
         this.descripcion_trabajo_empleado = descripcion_trabajo_empleado;
     }
 
@@ -155,26 +149,6 @@ public class Empleados {
     /* set del imagen_empleado */
     public void set_imagen_empleado(String imagen_empleado) {
         this.imagen_empleado = imagen_empleado;
-    }
-
-    /* get del nombre_trabajo_empleado */
-    public String get_nombre_trabajo_empleado() {
-        return nombre_trabajo_empleado;
-    }
-
-    /* set del nombre_trabajo_empleado */
-    public void set_nombre_trabajo_empleado(String nombre_trabajo_empleado) {
-        this.nombre_trabajo_empleado = nombre_trabajo_empleado;
-    }
-
-    /* get del imagen_trabajo_empleado */
-    public String get_imagen_trabajo_empleado() {
-        return imagen_trabajo_empleado;
-    }
-
-    /* set del imagen_trabajo_empleado */
-    public void set_imagen_trabajo_empleado(String imagen_trabajo_empleado) {
-        this.imagen_trabajo_empleado = imagen_trabajo_empleado;
     }
 
     /* get del descripcion_trabajo_empleado */

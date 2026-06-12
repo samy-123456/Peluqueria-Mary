@@ -192,6 +192,12 @@ public class PublicController {
         return "servicios";
     }
 
+    @GetMapping("/contactanos")
+    public String mostrarContactos(HttpSession session, Model model){
+        agregarDatosComunes(session, model);
+        return "contactanos";
+    }
+
     /*empleados mostramos los detos de la BD */
     @GetMapping("/empleados")
     public String mostrarEmpleados(HttpSession session, Model model){
